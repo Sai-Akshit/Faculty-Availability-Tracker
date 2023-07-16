@@ -1,0 +1,16 @@
+.body{
+    background-color: rgb(242, 226, 211);
+}
+.header{
+    background-color: #fff;
+    height: 45px;
+  }
+.Navbar__Items{
+    align-items: center;
+}
+.nav-link{
+    font-weight: bolder; 
+    color: white; 
+    margin-left: 30px; 
+    margin-right: 30px;
+}

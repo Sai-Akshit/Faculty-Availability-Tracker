@@ -1,0 +1,38 @@
+<div class="Navbar pt-3" style="justify-content: center">
+  <div class="Navbar__Link Navbar__Link-toggle">
+    <i class="fa fa-list"></i>
+  </div>
+  <nav class="Navbar__Items">
+    <div class="Navbar__Link">
+      <a class="nav-link" style="color: white" href="{% url 'main:home' %}"
+        >Home</a
+      >
+    </div>
+
+    <div class="Navbar__Link">
+      <a
+        class="nav-link"
+        style="color: white"
+        href="{% url 'main:course_champion' %}"
+        >Course Champion</a
+      >
+    </div>
+    <div class="Navbar__Link">
+      <a class="nav-link" style="color: white" href="{% url 'main:fileInput' %}"
+        >File Input</a
+      >
+    </div>
+    <div class="Navbar__Link">
+      <a
+        class="nav-link"
+        style="color: white"
+        href="{% url 'main:register_user' %}"
+        >Create new user</a
+      >
+    </div>
+
+    <a class="nav-link" style="color: white" href="{% url 'main:logout' %}">
+      Logout</a
+    >
+  </nav>
+</div>

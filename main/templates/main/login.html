@@ -1,0 +1,88 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href=" {% static 'styles/login.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Login</title>
+    <link
+      rel="short icon"
+      type="image"
+      href="{% static 'images/gitam_favicon.jpeg' %}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+
+  <body style="background-color: rgb(242, 226, 211); font-family: sans-serif">
+    <script>
+      {% for message in messages %}
+        swal('Incorrect Credentials', '{{ message }}', 'error');
+      {% endfor %}
+    </script>
+
+    <header style="background-color: white">
+      <div
+        class=""
+        style="background-color: white; font-family: 'Muli', sans-serif"
+      >
+        <div class="mx-auto text-center p-1">
+          <img
+            src=" {% static 'images/GITAM_Logo.png' %}"
+            class=""
+            style="height: 75px"
+          />
+          <!-- center this image within the column -->
+        </div>
+      </div>
+    </header>
+
+    <hr class="" style="margin-top: 0; color: #b1040f" />
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h2>Login to Your Account</h2>
+            <p>ENTER YOUR LOGIN CREDENTIALS</p>
+          </div>
+        </div>
+        <form class="login-form" method="post">
+          {% csrf_token %}
+          <input
+            class="loginplaceholder"
+            type="text"
+            name="username"
+            placeholder="Username"
+          />
+          <input type="password" name="password" placeholder="Password" />
+          <a
+            href="{% url 'main:password_reset' %}"
+            target="_blank"
+            class="atag"
+            style="color: #b1040f; float: right"
+            >Forgot Password ?</a
+          >
+          <div class="buttondiv mx-auto">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

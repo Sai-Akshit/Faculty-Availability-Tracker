@@ -1,0 +1,91 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{% static 'styles/body.css' %}" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Unauthorized</title>
+    <link
+      rel="short icon"
+      type="image"
+      href="{% static 'images/gitam_favicon.jpeg' %}"
+    />
+    <style>
+      .Navbar {
+        background-color: #831313;
+        display: flex;
+        padding: 16px;
+        font-family: sans-serif;
+        color: white;
+      }
+      .Navbar__Link {
+        padding-right: 8px;
+      }
+      .Navbar__Items {
+        display: flex;
+      }
+      .Navbar__Items--right {
+        margin-left: auto;
+      }
+      .Navbar__Link-toggle {
+        display: none;
+      }
+      @media only screen and (max-width: 700px) {
+        .Navbar__Items,
+        .Navbar {
+          flex-direction: column;
+        }
+
+        .Navbar__Items {
+          display: none;
+          justify-content: center;
+        }
+        .Navbar__Items--right {
+          margin-left: 0;
+        }
+        .Navbar__ToggleShow {
+          display: flex;
+        }
+        .Navbar__Link-toggle {
+          align-self: flex-end;
+          display: initial;
+          position: absolute;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+  <body class="body">
+    <header style="background-color: white">
+      <div
+        class=" "
+        style="background-color: white; font-family: 'Muli', sans-serif"
+      >
+        <div class="mx-auto text-center p-1">
+          <img
+            src="{% static 'images/GITAM_Logo.png' %}"
+            class=""
+            style="height: 60px"
+          />
+          <!-- center this image within the column -->
+        </div>
+      </div>
+    </header>
+
+    {% include 'main/navbar.html' %}
+
+    <h1 style="text-align: center">{{ message }}</h1>
+  </body>
+</html>
